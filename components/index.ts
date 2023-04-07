@@ -1,0 +1,10 @@
+export { default as AboutUs } from './AboutUs/AboutUs';
+export { default as CategoryContainer } from './Category/CategoryContainer';
+export { default as CardCategory } from './Category/components/CardCategory';
+export { default as Footer } from './Footer/Footer';
+export { default as Hero } from './Hero/Hero';
+export { default as Navbar } from './Navbar/Navbar';
+export * from './Navbar/components';
+export { default as ShopCardContainer } from './ShopCard/ShopCardContainer';
+export { default as ShopCard } from './ShopCard/components/ShopCard';
+export * from './index';
