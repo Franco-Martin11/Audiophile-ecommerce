@@ -1,6 +1,6 @@
+import { Banner } from "@/components";
 import { Product } from "@/types/type";
 import { Heading } from "@chakra-ui/react";
-import Banner from "./components/Banner";
 
 type Props = {};
 
@@ -15,9 +15,7 @@ export const getServerSideProps = async (context: {
   return { props: { res } };
 };
 
-const Index = ({ res }): JSX.Element => {
-  console.log(res);
-
+const Index = ({ res }: { res: Product[] }): JSX.Element => {
   if (res.length === 0) return <Heading>Funciona</Heading>;
   return (
     <div>
