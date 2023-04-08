@@ -8,7 +8,7 @@ type Props = {};
 const Navbar = (props: Props) => {
   return (
     <HStack as="nav" justifyContent={"space-between"} px="4" py="4">
-      <HamburgerMenu />
+      {/* <HamburgerMenu /> */}
       <Logo />
       {/* <Navigation /> */}
       <Cart />
