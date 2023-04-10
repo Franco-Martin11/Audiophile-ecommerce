@@ -9,9 +9,6 @@ const ShopCardContainer = (props: Props) => {
   return (
     <Grid
       templateColumns="repeat(auto-fit,minmax(250px,1fr))"
-      gap={{ base: "20", lg: "5" }}
-      mt={"20"}
-      mb={"8"}
     >
       {redirect.slice(1).map((element) => (
         <ShopCard

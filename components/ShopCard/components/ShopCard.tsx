@@ -21,6 +21,7 @@ const ShopCard = ({ titleCategory, routePath, imagePath }: Props) => {
         borderRadius={"lg"}
         boxShadow="sm"
         mx={4}
+        mt={20}
       >
         {imagePath && (
           <Stack align={"center"} position={"absolute"} top="-45px">
