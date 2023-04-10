@@ -1,7 +1,7 @@
 export const redirect = [
   {
     path: "/",
-    title: "",
+    title: "Home",
     img: "",
     id: 1,
   },

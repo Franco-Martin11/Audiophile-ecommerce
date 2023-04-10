@@ -28,7 +28,7 @@ const Hero = (props: Props) => {
         alignItems={{ base: "center", xl: "start" }}
         maxW="550px"
       >
-        <Heading as={"h1"} variant="title" fontSize={{md:"42px"}}>
+        <Heading as={"h1"} variant="title" fontSize={{ md: "42px" }}>
           <Text
             color={"textLight"}
             textTransform={"uppercase"}
