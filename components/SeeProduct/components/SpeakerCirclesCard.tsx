@@ -49,7 +49,7 @@ const SpeakerCirclesCard = () => {
   );
 };
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const data = await fetch(`http://0.0.0.0:3000/api/stock-item?id=6`);
+  const data = await fetch(`/api/stock-item?id=6`);
   const res = await data.json();
   console.log(res);
   return {
