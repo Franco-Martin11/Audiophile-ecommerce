@@ -1,9 +1,7 @@
 import { Box, HStack, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { Logo, Navigation } from "../Navbar/components";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <Stack
       bg={"black"}
