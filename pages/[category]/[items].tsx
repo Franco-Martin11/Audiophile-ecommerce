@@ -9,7 +9,7 @@ export const getServerSideProps = async (context: {
 }) => {
   const { items, category } = await context.params;
   const data = await fetch(
-    `/api/stock-item?id=${items}&category=${category}`
+    `https://audiophile-ecommerce-six.vercel.app/api/stock-item?id=${items}&category=${category}`
   );
   const res = await data.json();
   return { props: { res } };
