@@ -9,7 +9,7 @@ export const getServerSideProps = async (context: {
 }) => {
   const { items, category } = await context.params;
   const data = await fetch(
-    `http://localhost:3000/api/stock-item?id=${items}&category=${category}`
+    `http://0.0.0.0:3000/api/stock-item?id=${items}&category=${category}`
   );
   const res = await data.json();
   return { props: { res } };
