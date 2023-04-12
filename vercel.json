@@ -1,0 +1,7 @@
+{
+  "type": "next",
+  "routes": [
+    { "src": "/api/stock-item", "dest": "pages/api/stock-item.ts" },
+    { "src": "/api/stock-category", "dest": "pages/api/stock-category.ts" }
+  ]
+}
