@@ -1,5 +1,6 @@
 import { HamburgerMenu } from "@/components/Navbar/components";
 import { Heading } from "@chakra-ui/react";
+import fetch from "node-fetch";
 import React from "react";
 
 export const getServerSideProps = async (context: {

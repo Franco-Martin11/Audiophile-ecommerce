@@ -1,6 +1,7 @@
 import { Banner } from "@/components";
 import { Product } from "@/types/type";
 import { Heading } from "@chakra-ui/react";
+import fetch from "node-fetch";
 
 type Props = {};
 
@@ -8,9 +9,7 @@ export const getServerSideProps = async (context: {
   params: PromiseLike<{ category: any }> | { category: any };
 }) => {
   const { category } = await context.params;
-  const data = await fetch(
-    `/api/stock-category?category=${category}`
-  );
+  const data = await fetch(`/api/stock-category?category=${category}`);
   const res = await data.json();
   return { props: { res } };
 };
