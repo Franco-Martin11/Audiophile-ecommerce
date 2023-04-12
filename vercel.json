@@ -1,7 +1,13 @@
 {
   "type": "next",
   "routes": [
-    { "src": "/api/stock-item", "dest": "pages/api/stock-item.ts" },
-    { "src": "/api/stock-category", "dest": "pages/api/stock-category.ts" }
+    {
+      "src": "/(?<category>[^/]+)",
+      "dest": "/api/stock-item?category=$category"
+    },
+    {
+      "src": "/(?<category>[^/]+)/(?<id>[^/]+)",
+      "dest": "/api/stock-item?id=$id&category=$category"
+    }
   ]
 }
