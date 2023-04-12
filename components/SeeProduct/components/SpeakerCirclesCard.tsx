@@ -8,9 +8,7 @@ interface Props {
   res: Product;
 }
 
-const SpeakerCirclesCard: NextPage<Props> = (props) => {
-  // const { name, description } = props.res;
-  console.log(props);
+const SpeakerCirclesCard = () => {
   return (
     <>
       <Stack
@@ -29,7 +27,7 @@ const SpeakerCirclesCard: NextPage<Props> = (props) => {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Box w={"168px"} h={'250px'} position={"relative"}>
+        <Box w={"168px"} h={"250px"} position={"relative"}>
           <Image
             src={"/images/home/desktop/image-speaker-zx9.png"}
             fill={true}

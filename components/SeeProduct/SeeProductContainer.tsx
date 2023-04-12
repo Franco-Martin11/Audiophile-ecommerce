@@ -11,7 +11,7 @@ type Props = {};
 const SeeProductContainer = (props: Props) => {
   return (
     <Stack spacing={'none'} gap={6}>
-      <SpeakerCirclesCard res={undefined} />
+      <SpeakerCirclesCard/>
       <SpeakerProductCard />
       <EarphonesProduct />
     </Stack>
