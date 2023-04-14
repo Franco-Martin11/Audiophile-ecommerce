@@ -1,4 +1,5 @@
 import { Button, Heading, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -44,7 +45,9 @@ const Hero = (props: Props) => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.{" "}
         </Text>
-        <Button mt={4}>See Products</Button>
+        <Link href={"/headphones/xx99-mark-two-headphones"}>
+          <Button mt={4}>See Products</Button>
+        </Link>
       </Stack>
     </Stack>
   );

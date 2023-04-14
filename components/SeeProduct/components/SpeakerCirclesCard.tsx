@@ -3,6 +3,7 @@ import React from "react";
 import { NextPage, GetStaticProps, GetServerSideProps } from "next";
 import { Product } from "@/types/type";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   res: Product;
@@ -42,7 +43,9 @@ const SpeakerCirclesCard = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </Text>
-          <Button bg={"black"}>See Product</Button>
+          <Link href={"/speakers/zx9-speaker"}>
+            <Button bg={"black"}>See Product</Button>
+          </Link>
         </Stack>
       </Stack>
     </>
