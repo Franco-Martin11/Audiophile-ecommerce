@@ -51,7 +51,6 @@ const SpeakerCirclesCard = () => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const data = await fetch(`/api/stock-item?id=6`);
   const res = await data.json();
-  console.log(res);
   return {
     props: { res: res },
   };

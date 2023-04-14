@@ -15,7 +15,6 @@ export const getServerSideProps = async (context: {
     `http://localhost:3000/api/stock-category?category=${category}`
   );
   const res = await data.json();
-  console.log(res);
   return { props: { res, category } };
 };
 
@@ -26,7 +25,6 @@ const Index = ({
   res: Product[];
   category: string;
 }): JSX.Element => {
-  console.log(res);
   if (res.length === 0) return <Heading>Funciona</Heading>;
   return (
     <PageLayout title={category}>

@@ -73,7 +73,7 @@ const IndividualCardProduct = ({
         <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={"none"} gap={6}>
           {gallery.map((gallery, index) => (
             <ImageComponent
-              key={`galery-${index}`}
+              key={gallery.mobile}
               bgMobile={gallery.mobile}
               bgTablet={gallery.tablet}
               bgDesktop={gallery.desktop}

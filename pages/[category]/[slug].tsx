@@ -22,7 +22,6 @@ export const getServerSideProps = async (context: {
 const Items = ({ res }: Product[]): JSX.Element => {
   if (res.length === 0) return <Heading>Sin stock</Heading>;
   const [{ name }] = res;
-  console.log(res);
   return (
     <PageLayout title={name}>
       {res.map((item: Product) => (
