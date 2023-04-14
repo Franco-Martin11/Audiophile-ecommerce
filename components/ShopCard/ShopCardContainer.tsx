@@ -1,5 +1,5 @@
 import { redirect } from "@/constant/redirect";
-import { Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Grid} from "@chakra-ui/react";
 import React from "react";
 import ShopCard from "./components/ShopCard";
 

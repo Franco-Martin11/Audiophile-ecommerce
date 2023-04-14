@@ -20,6 +20,11 @@ export const Heading = defineStyleConfig({
       letterSpacing: "4px",
       color: "black",
     },
+    CategoryTitle: {
+      fontSize: "40px",
+      textTransform: "uppercase",
+      fontWeight: "500",
+    },
   },
   defaultProps: {
     variant: "title",

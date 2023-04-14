@@ -12,19 +12,13 @@ export interface Product {
   description: string;
   features: string;
   includedItems: IncludedItem[];
-  gallery: Gallery;
+  gallery: Image[];
   others: Other[];
 }
 export interface Other {
   slug: string;
   name: string;
   image: Image;
-}
-
-export interface Gallery {
-  first: Image;
-  second: Image;
-  third: Image;
 }
 
 export interface IncludedItem {

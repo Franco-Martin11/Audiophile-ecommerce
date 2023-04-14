@@ -6,15 +6,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { id, category } = req.query;
-  if (!category && !id) {
+  const { slug, category } = req.query;
+  if (!category && !slug) {
     return res.status(400).json({ message: "Missing parameters" });
   }
 
   const filteredData = data.filter((item) => {
     return (
-      (!category || item.category === category) &&
-      (!id || item.id === Number(id))
+      (!category || item.category === category) && (!slug || item.slug === slug)
     );
   });
 

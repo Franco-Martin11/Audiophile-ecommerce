@@ -17,7 +17,7 @@ const ImageComponent = ({
   children,
 }: Props) => {
   return (
-    <Box as="picture" height="100%" position={"relative"}>
+    <Box as="picture" display={'flex'} height="100%" position={"relative"}>
       <source media="(min-width: 62em)" srcSet={bgDesktop} />
       <source media="(min-width: 30em)" srcSet={bgTablet} />
       <Image src={bgMobile} objectFit="cover" borderRadius="0.5rem" alt={alt} />

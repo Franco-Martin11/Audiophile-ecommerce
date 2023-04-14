@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Stack, Text } from "@chakra-ui/react";
+import { Heading, HStack, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,7 +10,7 @@ const ShopCard = ({ titleCategory, routePath, imagePath }: Props) => {
   const route = useRouter();
   const handleRedirect = (routePath: string) => route.push(routePath);
   return (
-    <a href={routePath}>
+    <Link passHref href={routePath}>
       <Stack
         alignItems={"center"}
         position="relative"
@@ -41,7 +41,7 @@ const ShopCard = ({ titleCategory, routePath, imagePath }: Props) => {
           />
         </HStack>
       </Stack>
-    </a>
+    </Link>
   );
 };
 

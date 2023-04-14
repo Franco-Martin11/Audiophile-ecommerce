@@ -14,7 +14,7 @@ import React from "react";
 
 function Banner({ description, price, others, image, shortName }: Product) {
   return (
-    <Stack gap={4} spacing="none" bgColor={"teal.900"} p="4" my={10}>
+    <Stack gap={4} spacing="none" bgColor={"teal.900"} p="4" mb={10}>
       <Heading>Banner</Heading>
       <Text>{description}</Text>
       <Divider></Divider>

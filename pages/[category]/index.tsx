@@ -1,6 +1,8 @@
-import { Banner } from "@/components";
+import { Banner, PageLayout } from "@/components";
+import HeadingBanner from "@/components/Banner/HeadingBanner";
+import ProductCard from "@/components/ProductCard";
 import { Product } from "@/types/type";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Stack } from "@chakra-ui/react";
 import fetch from "node-fetch";
 
 type Props = {};
@@ -9,37 +11,40 @@ export const getServerSideProps = async (context: {
   params: PromiseLike<{ category: any }> | { category: any };
 }) => {
   const { category } = await context.params;
-  const data = await fetch(`/api/stock-category?category=${category}`);
+  const data = await fetch(
+    `http://localhost:3000/api/stock-category?category=${category}`
+  );
   const res = await data.json();
-  return { props: { res } };
+  console.log(res);
+  return { props: { res, category } };
 };
 
-const Index = ({ res }: { res: Product[] }): JSX.Element => {
+const Index = ({
+  res,
+  category,
+}: {
+  res: Product[];
+  category: string;
+}): JSX.Element => {
+  console.log(res);
   if (res.length === 0) return <Heading>Funciona</Heading>;
   return (
-    <div>
-      Index
-      {res.map((element: Product) => (
-        <Banner
-          key={element.id}
-          description={element.description}
-          price={element.price}
-          others={element.others}
-          id={0}
-          slug={""}
-          name={""}
-          category={""}
-          new={false}
-          features={""}
-          shortName={element.shortName}
-          image={element.image}
-          cartImage={element.cartImage}
-          categoryImage={element.categoryImage}
-          includedItems={element.includedItems}
-          gallery={element.gallery}
-        />
-      ))}
-    </div>
+    <PageLayout title={category}>
+      <HeadingBanner categoryTitle={category} />
+      <Stack gap={8} bg={"bg"} p={8}>
+        {res.map((element: Product) => (
+          <ProductCard
+            key={element.id}
+            newItem={element.new}
+            name={element.name}
+            description={element.description}
+            pathRedirect={`${element.category}/${element.slug}`}
+            image={element.image}
+            slug={element.slug}
+          />
+        ))}{" "}
+      </Stack>
+    </PageLayout>
   );
 };
 
