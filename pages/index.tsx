@@ -1,12 +1,6 @@
-import {
-  AboutUs,
-  Footer,
-  Hero,
-  PageLayout,
-  ShopCardContainer,
-} from "@/components";
+import { Hero, PageLayout, ShopCardContainer } from "@/components";
 import SeeProductContainer from "@/components/SeeProduct/SeeProductContainer";
-import { Container, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 
 export default function Home() {
   return (
