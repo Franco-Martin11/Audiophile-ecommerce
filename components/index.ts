@@ -7,6 +7,7 @@ export { default as ButtonCart } from './ButtonCart';
 export { default as CategoryContainer } from './Category/CategoryContainer';
 export { default as CardCategory } from './Category/components/CardCategory';
 export { default as Footer } from './Footer/Footer';
+export { default as GoBack } from './GoBack';
 export { default as Hero } from './Hero/Hero';
 export { default as ImageComponent } from './ImageComponent';
 export { default as IncludedItems } from './IncludedItems';

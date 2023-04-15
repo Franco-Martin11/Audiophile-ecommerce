@@ -7,6 +7,7 @@ import {
   AlsoLikeContainer,
   ButtonCart,
   ShopCardContainer,
+  GoBack,
 } from "../components";
 
 const IndividualCardProduct = ({
@@ -27,7 +28,8 @@ const IndividualCardProduct = ({
 }: Product) => {
   console.log(gallery);
   return (
-    <Stack gap={16} spacing={"none"} bg={"white"} px={4} py={8}>
+    <Stack position={'relative'} gap={16} spacing={"none"} bg={"white"} px={4} py={12}>
+      <GoBack />
       <SimpleGrid gap={8} columns={{ base: 1, md: 2 }} alignItems={"center"}>
         <ImageComponent
           bgMobile={image.mobile}
