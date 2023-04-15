@@ -4,8 +4,7 @@ import { Stack } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <PageLayout title={"home"}>
-      <Hero />
+    <PageLayout title={"home"} bgColor="bg">
       <Stack
         as={"section"}
         maxW="full"

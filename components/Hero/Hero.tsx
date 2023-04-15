@@ -12,7 +12,7 @@ const Hero = (props: Props) => {
         md: "url('/images/home/tablet/image-hero.jpg')",
         lg: "url('/images/home/desktop/image-hero.jpg')",
       }}
-      bgPosition={{ base: "center", lg: "right" }}
+      bgPosition={{ base: "center", md: "right" }}
       bgSize={{ base: "cover", md: "contain" }}
       bgRepeat="no-repeat"
       justifyContent="center"
@@ -22,11 +22,11 @@ const Hero = (props: Props) => {
       mx="auto"
     >
       <Stack
-        textAlign={{ base: "center", xl: "start" }}
+        textAlign={{ base: "center", md: "start" }}
         spacing={"none"}
         gap={6}
         px={{ base: "8", md: "12", lg: "16", xl: "20" }}
-        alignItems={{ base: "center", xl: "start" }}
+        alignItems={{ base: "center", md: "start" }}
         maxW="550px"
       >
         <Heading as={"h1"} variant="title" fontSize={{ md: "42px" }}>
