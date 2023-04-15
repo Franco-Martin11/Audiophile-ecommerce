@@ -28,7 +28,12 @@ const IndividualCardProduct = ({
 }: Product) => {
   console.log(gallery);
   return (
-    <Stack position={'relative'} gap={16} spacing={"none"} bg={"white"} px={4} py={12}>
+    <Stack
+      position={"relative"}
+      gap={16}
+      spacing={"none"}
+      py={12}
+    >
       <GoBack />
       <SimpleGrid gap={8} columns={{ base: 1, md: 2 }} alignItems={"center"}>
         <ImageComponent

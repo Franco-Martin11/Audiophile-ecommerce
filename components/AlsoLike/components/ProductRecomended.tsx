@@ -17,7 +17,7 @@ const ProductRecomended = ({ image, slug, title }: Props) => {
       />{" "}
       <Stack
         alignItems={{ base: "center", lg: "flex-start" }}
-        justify-content="space-between"
+        justifyContent="flex-end"
       >
         <Heading variant={'cardHeading'} fontWeight={'500'} color={"black"}>{title}</Heading>
         <Link href={`/${slug}`}>

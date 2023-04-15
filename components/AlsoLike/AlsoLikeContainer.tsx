@@ -14,7 +14,8 @@ const AlsoLikeContainer = ({ others }: Props) => {
       <SimpleGrid
         gap={"16"}
         spacing={"none"}
-        minChildWidth={{ base: "300px", md: "120px" }}
+        minChildWidth={{ base: "350px" }}
+        px={4}
       >
         {others.map((item) => (
           <ProductRecomended
