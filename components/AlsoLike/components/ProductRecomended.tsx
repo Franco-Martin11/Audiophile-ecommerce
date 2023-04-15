@@ -8,7 +8,7 @@ type Props = { image: Image; slug: string; title: string };
 
 const ProductRecomended = ({ image, slug, title }: Props) => {
   return (
-    <SimpleGrid gap={4} columns={{ base: 1, lg: 2 }} justifyContent={"center"}>
+    <SimpleGrid gap={4} columns={1} justifyContent={"center"}>
       <ImageComponent
         bgMobile={image.mobile}
         bgTablet={image.tablet}
@@ -16,7 +16,7 @@ const ProductRecomended = ({ image, slug, title }: Props) => {
         alt={title}
       />{" "}
       <Stack
-        alignItems={{ base: "center", lg: "flex-start" }}
+        alignItems={'center'}
         justifyContent="flex-end"
       >
         <Heading variant={'cardHeading'} fontWeight={'500'} color={"black"}>{title}</Heading>

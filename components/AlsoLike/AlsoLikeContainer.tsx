@@ -8,15 +8,15 @@ type Props = { others: Other[] };
 const AlsoLikeContainer = ({ others }: Props) => {
   return (
     <>
-      <Heading mt={16} variant={'cardHeading'} color={"black"} textAlign={"center"}>
+      <Heading
+        mt={16}
+        variant={"cardHeading"}
+        color={"black"}
+        textAlign={"center"}
+      >
         You may also like
       </Heading>
-      <SimpleGrid
-        gap={"16"}
-        spacing={"none"}
-        minChildWidth={{ base: "350px" }}
-        px={4}
-      >
+      <SimpleGrid gap={"8"} spacing={"none"} columns={{ base: 1, md: 3 }}>
         {others.map((item) => (
           <ProductRecomended
             key={item.image.mobile}

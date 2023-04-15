@@ -1,26 +1,42 @@
 import ImageComponent from "@/components/ImageComponent";
-import { Button, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  HStack,
+  Heading,
+  SimpleGrid,
+  Stack,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 
 const EarphonesProduct = () => {
   return (
-    <SimpleGrid justifyItems={"center"} columns={{ base: 1, sm: 2 }} gap={4}>
-      <ImageComponent
-        bgMobile={"/images/home/mobile/image-earphones-yx1.jpg"}
-        bgTablet={"/images/home/tablet/image-earphones-yx1.jpg"}
-        bgDesktop={"/images/home/desktop/image-earphones-yx1.jpg"}
-        alt={"earphones-yx1"}
-      />
+    <HStack
+      alignItems={"stretch"}
+      justifyContent={"center"}
+      gap={4}
+      spacing={"0"}
+      flexWrap={"wrap"}
+      bg={"gray"}
+      borderRadius={'lg'}
+      _hover={{ boxShadow: "lg" }}
+    >
+      <Box minW={"250px"}>
+        <ImageComponent
+          bgMobile={"/images/home/mobile/image-earphones-yx1.jpg"}
+          bgTablet={"/images/home/tablet/image-earphones-yx1.jpg"}
+          bgDesktop={"/images/home/desktop/image-earphones-yx1.jpg"}
+          alt={"earphones-yx1"}
+        />
+      </Box>
       <Stack
-        h={{ base: "200px", sm: "auto" }}
         justifyContent={"center"}
-        p={4}
         spacing={6}
-        bg={"gray"}
+        p={4}
         w="full"
         borderRadius={"lg"}
-        _hover={{ boxShadow: "lg" }}
+        flex="1"
       >
         <Heading color={"black"} fontSize={"28px"}>
           yx1 earphones
@@ -31,7 +47,7 @@ const EarphonesProduct = () => {
           </Button>
         </Link>
       </Stack>
-    </SimpleGrid>
+    </HStack>
   );
 };
 

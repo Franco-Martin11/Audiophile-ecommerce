@@ -25,7 +25,7 @@ const PageLayout = ({
           {title === "home" && <Hero />}
         </Container>
         <Box bg={bgColor}>
-          <Container maxW={"container.xl"} mx="auto" p={'0'}>
+          <Container maxW={"container.lg"} mx="auto" p={'0'}>
             {children}
           </Container>
         </Box>

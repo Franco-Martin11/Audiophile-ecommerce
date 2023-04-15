@@ -33,6 +33,7 @@ const IndividualCardProduct = ({
       gap={16}
       spacing={"none"}
       py={12}
+      px={4}
     >
       <GoBack />
       <SimpleGrid gap={8} columns={{ base: 1, md: 2 }} alignItems={"center"}>
