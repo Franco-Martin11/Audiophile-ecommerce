@@ -8,7 +8,7 @@ const HamburgerMenu = (props: Props) => {
   const [state, setState] = useState(true);
   const handleClick = () => setState((prev) => !prev);
   return (
-    <Button variant={state ? "link" : "primary"} onClick={handleClick}>
+    <Button flex={'0 0 50px'} h={'full'} variant={state ? "link" : "primary"} onClick={handleClick}>
       {state ? (
         <Image
           alt="prueba"

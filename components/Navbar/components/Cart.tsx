@@ -12,6 +12,8 @@ const Cart = (props: Props) => {
         p={4}
         cursor={"pointer"}
         as="button"
+        margin={'0 !important'}
+        flex={"0 0 50px"}
         onClick={() => setOpen((prev) => !prev)}
       >
         <svg width="23" height="20" xmlns="http://www.w3.org/2000/svg">

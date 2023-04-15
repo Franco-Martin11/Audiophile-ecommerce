@@ -6,7 +6,7 @@ const Footer = () => {
     <Stack
       as={"footer"}
       bg={"black"}
-      spacing={8}
+      gap={8}
       px={4}
       alignItems={"center"}
       textAlign={{ base: "center", lg: "start" }}
