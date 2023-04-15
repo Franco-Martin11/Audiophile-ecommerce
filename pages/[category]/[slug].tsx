@@ -1,10 +1,8 @@
 import { PageLayout } from "@/components";
 import IndividualCardProduct from "@/components/IndividualCardProduct";
 import { Product } from "@/types/type";
-import { formatedNumber } from "@/utils/formatedNumber";
 import { Heading } from "@chakra-ui/react";
 import fetch from "node-fetch";
-import React from "react";
 
 export const getServerSideProps = async (context: {
   params:

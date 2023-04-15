@@ -23,9 +23,7 @@ export default function Home() {
       >
         <ShopCardContainer />
         <SeeProductContainer />
-        <AboutUs />
       </Stack>
-      <Footer />
     </PageLayout>
   );
 }

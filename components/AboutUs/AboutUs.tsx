@@ -7,7 +7,15 @@ type Props = {};
 
 const AboutUs = (props: Props) => {
   return (
-    <SimpleGrid justifyItems={'center'} alignItems={"center"} columns={{ base: 1, lg: 2 }} spacing={8}>
+    <SimpleGrid
+      py={10}
+      px={4}
+      bgColor="bg"
+      justifyItems={"center"}
+      alignItems={"center"}
+      columns={{ base: 1, lg: 2 }}
+      spacing={8}
+    >
       <ImageComponent
         bgMobile={"/images/shared/mobile/image-best-gear.jpg"}
         bgTablet={"/images/shared/tablet/image-best-gear.jpg"}

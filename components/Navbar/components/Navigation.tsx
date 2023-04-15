@@ -11,6 +11,7 @@ const Navigation = (props: Props) => {
       flexWrap={"wrap"}
       justifyContent={"center"}
       alignItems="center"
+      as={"nav"}
     >
       {redirect.map((element) => (
         <Link passHref key={element.id} href={element.path}>

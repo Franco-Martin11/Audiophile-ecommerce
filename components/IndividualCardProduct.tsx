@@ -1,18 +1,13 @@
-import {
-  Button,
-  ButtonGroup,
-  HStack,
-  Heading,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import ImageComponent from "./ImageComponent";
+import { Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { Product } from "@/types/type";
 import { formatedNumber } from "@/utils/formatedNumber";
-import { useState } from "react";
-import ButtonCart from "./ButtonCart";
-import IncludedItems from "./IncludedItems";
+import {
+  IncludedItems,
+  ImageComponent,
+  AlsoLikeContainer,
+  ButtonCart,
+  ShopCardContainer,
+} from "../components";
 
 const IndividualCardProduct = ({
   slug,
@@ -32,8 +27,8 @@ const IndividualCardProduct = ({
 }: Product) => {
   console.log(gallery);
   return (
-    <Stack gap={8} spacing={"none"} bg={"white"} p={4}>
-      <SimpleGrid gap={4} columns={{ base: 1, lg: 2 }} alignItems={"center"}>
+    <Stack gap={16} spacing={"none"} bg={"white"} px={4} py={8}>
+      <SimpleGrid gap={8} columns={{ base: 1, md: 2 }} alignItems={"center"}>
         <ImageComponent
           bgMobile={image.mobile}
           bgTablet={image.tablet}
@@ -82,6 +77,9 @@ const IndividualCardProduct = ({
           ))}
         </SimpleGrid>
       )}
+      {others && <AlsoLikeContainer others={others} />}
+      
+      <ShopCardContainer />
     </Stack>
   );
 };
