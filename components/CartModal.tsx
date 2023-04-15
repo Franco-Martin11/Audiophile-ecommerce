@@ -16,9 +16,9 @@ import { CartItems } from "@/types/type";
 type Props = {};
 
 const CartModal = (props: Props) => {
-  const cartState = useSelector((store) => store.cart);
+  const cartState = useSelector((store: any) => store.cart);
   const dispatcher = useDispatch();
-  const handleReset = () => dispatcher(removeProduct());
+  const handleReset = () => dispatcher(removeProduct([]));
   console.log(cartState);
   return (
     <Box
@@ -47,7 +47,11 @@ const CartModal = (props: Props) => {
           <Heading color={"black"} fontSize={"18px"} fontWeight={"500"}>
             Cart {cartState && `( ${cartState.length} )`}
           </Heading>
-          <Button textDecoration={'underline'} onClick={handleReset} variant={"link"}>
+          <Button
+            textDecoration={"underline"}
+            onClick={handleReset}
+            variant={"link"}
+          >
             Remove All
           </Button>
         </HStack>
@@ -76,7 +80,7 @@ const CartModal = (props: Props) => {
         <Stack>
           <HStack justifyContent={"space-between"}>
             <Text color="text">TOTAL</Text>
-            <Heading color={'#242323'} fontSize={"22px"} fontWeight={"700"}>
+            <Heading color={"#242323"} fontSize={"22px"} fontWeight={"700"}>
               {formatedNumber(155000)}
             </Heading>
           </HStack>

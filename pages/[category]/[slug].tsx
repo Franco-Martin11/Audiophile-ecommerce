@@ -16,9 +16,10 @@ export const getServerSideProps = async (context: {
   const res = await data.json();
   return { props: { res } };
 };
-
-const Items = ({ res }: Product[]): JSX.Element => {
-  if (res.length === 0) return <Heading>Sin stock</Heading>;
+interface Res {
+  res: Product[];
+}
+const Items = ({ res }: Res): JSX.Element => {
   const [{ name }] = res;
   return (
     <PageLayout title={name} bgColor={"white"}>
