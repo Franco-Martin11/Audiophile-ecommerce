@@ -37,3 +37,9 @@ export interface Category {
   routePath: string;
   imagePath: string;
 }
+
+export interface CartItems {
+  price: number;
+  shortName: string;
+  cartImage: string;
+}

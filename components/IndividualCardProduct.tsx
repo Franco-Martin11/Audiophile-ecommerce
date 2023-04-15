@@ -26,15 +26,8 @@ const IndividualCardProduct = ({
   gallery,
   others,
 }: Product) => {
-  console.log(gallery);
   return (
-    <Stack
-      position={"relative"}
-      gap={16}
-      spacing={"none"}
-      py={12}
-      px={4}
-    >
+    <Stack position={"relative"} gap={16} spacing={"none"} py={12} px={4}>
       <GoBack />
       <SimpleGrid gap={8} columns={{ base: 1, md: 2 }} alignItems={"center"}>
         <ImageComponent
@@ -59,7 +52,11 @@ const IndividualCardProduct = ({
           <Heading variant={"cardHeading"} color={"black"}>
             {formatedNumber(price)}
           </Heading>
-          <ButtonCart price={price} />
+          <ButtonCart
+            price={price}
+            shortName={shortName}
+            cartImage={cartImage}
+          />
         </Stack>
       </SimpleGrid>
 

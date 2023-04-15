@@ -5,7 +5,17 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <HStack as="nav" justifyContent={"space-between"} px="4" py="4">
+    <HStack
+      as="nav"
+      justifyContent={"space-between"}
+      px="4"
+      py="4"
+      position={"fixed"}
+      top={0}
+      w={"full"}
+      zIndex={"sticky"}
+      bg={"black"}
+    >
       <HamburgerMenu />
       <Link href={"/"} passHref>
         <Logo />

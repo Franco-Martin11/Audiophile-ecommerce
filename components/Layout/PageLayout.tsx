@@ -18,14 +18,14 @@ const PageLayout = ({
         <meta name="description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <chakra.main>
+      <chakra.main position={'relative'}>
         <Container maxW={"container.xl"} mx="auto" p="0">
           <Navbar />
           <Divider my={1} />
           {title === "home" && <Hero />}
         </Container>
-        <Box bg={bgColor}>
-          <Container maxW={"container.lg"} mx="auto" p={'0'}>
+        <Box mt={"88px"} bg={bgColor}>
+          <Container maxW={"container.lg"} mx="auto" p={"0"}>
             {children}
           </Container>
         </Box>

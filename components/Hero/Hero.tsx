@@ -7,6 +7,7 @@ type Props = {};
 const Hero = (props: Props) => {
   return (
     <Stack
+    mt={'88px'}
       bgImage={{
         base: "url(/images/home/mobile/image-hero.jpg)",
         md: "url('/images/home/tablet/image-hero.jpg')",

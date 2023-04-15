@@ -1,16 +1,25 @@
+import { addProduct } from "@/store";
+import { CartItems } from "@/types/type";
 import { ButtonGroup, Button, Text, HStack } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
-type Props = { price: number };
-
-const ButtonCart = ({ price }: Props) => {
-  const ada = price;
+const ButtonCart = ({ price, shortName, cartImage }: CartItems) => {
   const [quantityItems, setQuantityItems] = useState(1);
+  const dispatcher = useDispatch();
   const handleItems = (type: string) => {
-    type === "add" && setQuantityItems((prev) => prev + 1);
-    type === "remove" &&
-      quantityItems > 1 &&
+    if (type === "add") {
+      setQuantityItems((prev) => prev + 1);
+      return;
+    }
+    if (type === "remove") {
+      quantityItems > 1;
       setQuantityItems((prev) => prev - 1);
+    }
+  };
+  const handleSendToCart = (type:string) => {
+    type === "add" &&
+      dispatcher(addProduct({ price, quantityItems, shortName, cartImage }));
   };
   return (
     <HStack spacing={4}>
@@ -42,7 +51,7 @@ const ButtonCart = ({ price }: Props) => {
           +{" "}
         </Button>
       </ButtonGroup>
-      <Button>Add to cart</Button>{" "}
+      <Button onClick={()=>handleSendToCart('add')}>Add to cart</Button>{" "}
     </HStack>
   );
 };
