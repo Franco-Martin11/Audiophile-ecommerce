@@ -1,5 +1,5 @@
 import { Product } from "@/types/type";
-import { formatedNumber } from "@/utils/formatedNumber";
+import { formatedNumber } from "@/utils";
 import {
   Badge,
   Box,

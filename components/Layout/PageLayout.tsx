@@ -1,14 +1,16 @@
 import Head from "next/head";
 import { Container, Divider, chakra } from "@chakra-ui/react";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";;
+import { CapitalizeFirstLetter } from "@/utils";
 
 type Children = { children: React.ReactNode; title: string };
 
 const PageLayout = ({ children, title = "Challenge" }: Children) => {
+
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{CapitalizeFirstLetter(title)}</title>
         <meta name="description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

@@ -10,7 +10,7 @@ import { Container, Stack } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <PageLayout title={"section"}>
+    <PageLayout title={"home"}>
       <Hero />
       <Stack
         as={"section"}

@@ -1,6 +1,6 @@
 import { Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { Product } from "@/types/type";
-import { formatedNumber } from "@/utils/formatedNumber";
+import { formatedNumber } from "@/utils";
 import {
   IncludedItems,
   ImageComponent,
@@ -78,7 +78,7 @@ const IndividualCardProduct = ({
         </SimpleGrid>
       )}
       {others && <AlsoLikeContainer others={others} />}
-      
+
       <ShopCardContainer />
     </Stack>
   );

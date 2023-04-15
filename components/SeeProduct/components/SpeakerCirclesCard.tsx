@@ -28,7 +28,7 @@ const SpeakerCirclesCard = () => {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Box w={"168px"} h={"250px"} position={"relative"}>
+        <Box w={"168px"} h={"215px"} position={"relative"}>
           <Image
             src={"/images/home/desktop/image-speaker-zx9.png"}
             fill={true}
