@@ -24,7 +24,7 @@ const SpeakerCirclesCard = () => {
         spacing={"none"}
         px={"6"}
         py={12}
-        bgColor={"teal"}
+        bgColor={"accent"}
         justifyContent={"center"}
         alignItems={"center"}
       >
