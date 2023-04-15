@@ -1,5 +1,4 @@
 {
-  "type": "next",
   "routes": [
     {
       "src": "/(?<category>[^/]+)",
