@@ -1,9 +1,8 @@
-import { Banner, PageLayout } from "@/components";
+import { PageLayout } from "@/components";
 import HeadingBanner from "@/components/Banner/HeadingBanner";
 import ProductCard from "@/components/ProductCard";
 import { Product } from "@/types/type";
 import { Heading, Stack } from "@chakra-ui/react";
-import fetch from "node-fetch";
 
 type Props = {};
 
