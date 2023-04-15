@@ -2,11 +2,11 @@
   "functions": {
     "pages/api/stock-item.ts": {
       "memory": 3008,
-      "maxDuration": 60
+      "maxDuration": 6
     },
     "pages/api/stock-category.ts": {
       "memory": 1024,
-      "maxDuration": 30
+      "maxDuration": 3
     }
   }
 }
