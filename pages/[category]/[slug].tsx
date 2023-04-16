@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components";
 import IndividualCardProduct from "@/components/IndividualCardProduct";
 import { Product } from "@/types/type";
-
+import FilteredData from "@/utils/FilteredData";
 
 export const getServerSideProps = async (context: {
   params:
@@ -9,11 +9,9 @@ export const getServerSideProps = async (context: {
     | { slug: any; category: any };
 }) => {
   const { slug, category } = await context.params;
-  const data = await fetch(
-    `http://localhost:3000/api/stock-item?slug=${slug}&category=${category}`
-  );
-  const res = await data.json();
-  return { props: { res } };
+  const filteredData = FilteredData({ category, type: "category", slug });
+  console.log(filteredData);
+  return { props: { res: filteredData } };
 };
 interface Res {
   res: Product[];
