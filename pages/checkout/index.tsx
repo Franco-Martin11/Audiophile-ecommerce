@@ -1,5 +1,5 @@
-import { GoBack, PageLayout } from "@/components";
-import FormFields from "@/components/Checkout/components/FormFields";
+import { PageLayout } from "@/components";
+import CheckoutForm from "@/components/CheckoutRefactor";
 import React from "react";
 
 type Props = {};
@@ -7,7 +7,7 @@ type Props = {};
 const Checkout = (props: Props) => {
   return (
     <PageLayout title="Checkout" bgColor="bg">
-      <FormFields />;
+      <CheckoutForm />;
     </PageLayout>
   );
 };

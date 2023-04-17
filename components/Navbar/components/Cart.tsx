@@ -15,6 +15,7 @@ const Cart = (props: Props) => {
         margin={'0 !important'}
         flex={"0 0 50px"}
         onClick={() => setOpen((prev) => !prev)}
+        name='CartButton'
       >
         <svg width="23" height="20" xmlns="http://www.w3.org/2000/svg">
           <path
