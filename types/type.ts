@@ -43,3 +43,16 @@ export interface CartItems {
   shortName: string;
   cartImage: string;
 }
+
+export interface Field {
+  label: string;
+  name: string;
+  type: string;
+  value: string;
+  placeholder?: string;
+}
+
+export interface FormField {
+  categoryForm: string;
+  fields: Field[];
+}

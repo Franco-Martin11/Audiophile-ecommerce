@@ -9,7 +9,7 @@ const GoBack = () => {
       position={"absolute"}
       top={"6px"}
       pr={4}
-      py={2}
+      py={4}
       variant={"link"}
       onClick={() => router.back()}
     >
