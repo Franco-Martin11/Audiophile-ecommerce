@@ -12,6 +12,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeProduct } from "@/store";
 import { CartItems } from "@/types/type";
+import Link from "next/link";
 
 type Props = {};
 
@@ -84,7 +85,9 @@ const CartModal = (props: Props) => {
               {formatedNumber(155000)}
             </Heading>
           </HStack>
-          <Button>Checkout</Button>
+          <Link href={"/checkout"} passHref>
+            <Button>Checkout</Button>
+          </Link>
         </Stack>
       </Box>
     </Box>

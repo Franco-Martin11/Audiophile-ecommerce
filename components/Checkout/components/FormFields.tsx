@@ -12,6 +12,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
+import DownloadPDF from "./DownloadPDF";
 import FormRadio from "./FormRadio";
 
 const data: FormField[] = [
@@ -191,7 +192,7 @@ function DynamicForm() {
               (element) =>
                 element.type !== "radio" && (
                   <Box key={element.name}>
-                    <FormLabel fontSize={"xs"}>{element.label}</FormLabel>
+                    <FormLabel fontSize={"sm"}>{element.label}</FormLabel>
                     <Input
                       borderColor="orange.500"
                       _placeholder={{ color: "text", fontSize: "14px" }}
@@ -210,6 +211,7 @@ function DynamicForm() {
           </Stack>
         ))}
         <Button type="submit">Enviar</Button>
+        <DownloadPDF value={formik.values} />
       </chakra.form>
     </>
   );
