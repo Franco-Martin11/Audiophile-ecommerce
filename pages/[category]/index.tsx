@@ -11,7 +11,6 @@ export const getServerSideProps = async (context: {
   const { category } = await context.params;
 
   const filteredData = FilteredData({ category, type: "category", slug: "" });
-  console.log(filteredData);
   return { props: { res: filteredData, category } };
 };
 

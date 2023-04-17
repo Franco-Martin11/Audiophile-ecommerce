@@ -106,18 +106,17 @@ function DynamicForm() {
     // define el tipo del objeto value
     for (const field in values) {
       if (!values[field]) {
-        console.log(`Field ${field} is empty`);
+        alert(`Field ${field} is empty`);
       }
     }
 
-    console.log(values);
+ 
   };
 
   const formik = useFormik({
     initialValues,
     onSubmit: handleSubmit,
   });
-  console.log(formik);
   return (
     <>
       <Box px={8} pt={12} position={"relative"}>

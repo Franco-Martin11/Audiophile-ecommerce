@@ -20,7 +20,7 @@ const CartModal = (props: Props) => {
   const cartState = useSelector((store: any) => store.cart);
   const dispatcher = useDispatch();
   const handleReset = () => dispatcher(removeProduct([]));
-  console.log(cartState);
+  
   return (
     <Box
       position={"absolute"}
