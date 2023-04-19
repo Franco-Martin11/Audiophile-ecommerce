@@ -1,6 +1,6 @@
 import { addProduct, removeProduct } from "@/store";
 import { CartItems, Optional } from "@/types/type";
-import { ButtonGroup, Button, Text, HStack } from "@chakra-ui/react";
+import { ButtonGroup, Button, Text, HStack, Stack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 type CartItemsPartial = Optional<CartItems, "quantityItems">;
@@ -55,8 +55,14 @@ const ButtonCart = ({ price, shortName, cartImage }: CartItemsPartial) => {
           +{" "}
         </Button>
       </ButtonGroup>
-      <Button onClick={() => handleSendToCart("add")}>Add to cart</Button>{" "}
-      <Button onClick={() => handleSendToCart("remove")}>remove to cart</Button>{" "}
+      <Stack flex={"1 0 150px"}>
+        <Button maxW="250px" onClick={() => handleSendToCart("add")}>
+          Add to cart
+        </Button>{" "}
+        <Button maxW="250px" onClick={() => handleSendToCart("remove")}>
+          remove to cart
+        </Button>{" "}
+      </Stack>
     </HStack>
   );
 };
