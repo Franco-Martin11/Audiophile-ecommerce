@@ -56,3 +56,9 @@ export interface FormField {
   categoryForm: string;
   fields: Field[];
 }
+
+export interface State {
+  items: CartItems[] | any;
+  totalProducts: number;
+  totalPrice: number;
+}

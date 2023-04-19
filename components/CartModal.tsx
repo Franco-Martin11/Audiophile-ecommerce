@@ -20,7 +20,7 @@ const CartModal = (props: Props) => {
   const cartState = useSelector((store: any) => store.cart);
   const dispatcher = useDispatch();
   const handleReset = () => dispatcher(removeProduct([]));
-  
+
   return (
     <Box
       position={"absolute"}
@@ -56,7 +56,7 @@ const CartModal = (props: Props) => {
             Remove All
           </Button>
         </HStack>
-        {cartState?.map((cartState: CartItems) => (
+        {cartState.items?.map((cartState: CartItems) => (
           <HStack my={4} key={cartState.shortName} alignItems={"center"}>
             <HStack flex={1} alignItems={"center"} gap={4} spacing={"0"}>
               <Image

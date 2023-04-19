@@ -1,4 +1,4 @@
-import { addProduct } from "@/store";
+import { addProduct, removeProduct } from "@/store";
 import { CartItems } from "@/types/type";
 import { ButtonGroup, Button, Text, HStack } from "@chakra-ui/react";
 import React, { useState } from "react";
@@ -17,9 +17,13 @@ const ButtonCart = ({ price, shortName, cartImage }: CartItems) => {
       setQuantityItems((prev) => prev - 1);
     }
   };
-  const handleSendToCart = (type:string) => {
+
+  const handleSendToCart = (type: string) => {
     type === "add" &&
       dispatcher(addProduct({ price, quantityItems, shortName, cartImage }));
+    if (type === "remove") {
+      dispatcher(removeProduct({ shortName, quantityItems, price }));
+    }
   };
   return (
     <HStack spacing={4}>
@@ -51,7 +55,8 @@ const ButtonCart = ({ price, shortName, cartImage }: CartItems) => {
           +{" "}
         </Button>
       </ButtonGroup>
-      <Button onClick={()=>handleSendToCart('add')}>Add to cart</Button>{" "}
+      <Button onClick={() => handleSendToCart("add")}>Add to cart</Button>{" "}
+      <Button onClick={() => handleSendToCart("remove")}>remove to cart</Button>{" "}
     </HStack>
   );
 };
