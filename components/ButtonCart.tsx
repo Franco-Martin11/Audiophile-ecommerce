@@ -1,10 +1,10 @@
 import { addProduct, removeProduct } from "@/store";
-import { CartItems } from "@/types/type";
+import { CartItems, Optional } from "@/types/type";
 import { ButtonGroup, Button, Text, HStack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-
-const ButtonCart = ({ price, shortName, cartImage }: CartItems) => {
+type CartItemsPartial = Optional<CartItems, "quantityItems">;
+const ButtonCart = ({ price, shortName, cartImage }: CartItemsPartial) => {
   const [quantityItems, setQuantityItems] = useState(1);
   const dispatcher = useDispatch();
   const handleItems = (type: string) => {
