@@ -3,10 +3,13 @@ import { CartItems, Optional } from "@/types/type";
 import { ButtonGroup, Button, Text, HStack, Stack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 type CartItemsPartial = Optional<CartItems, "quantityItems">;
+
 const ButtonCart = ({ price, shortName, cartImage }: CartItemsPartial) => {
   const [quantityItems, setQuantityItems] = useState(1);
   const dispatcher = useDispatch();
+
   const handleItems = (type: string) => {
     if (type === "add") {
       setQuantityItems((prev) => prev + 1);
@@ -17,14 +20,12 @@ const ButtonCart = ({ price, shortName, cartImage }: CartItemsPartial) => {
       setQuantityItems((prev) => prev - 1);
     }
   };
+  const addProductHandler = () =>
+    dispatcher(addProduct({ price, quantityItems, shortName, cartImage }));
 
-  const handleSendToCart = (type: string) => {
-    type === "add" &&
-      dispatcher(addProduct({ price, quantityItems, shortName, cartImage }));
-    if (type === "remove") {
-      dispatcher(removeProduct({ shortName, quantityItems, price }));
-    }
-  };
+  const removeProductHandler = () =>
+    dispatcher(removeProduct({ shortName, quantityItems, price }));
+
   return (
     <HStack spacing={4}>
       <ButtonGroup
@@ -56,10 +57,10 @@ const ButtonCart = ({ price, shortName, cartImage }: CartItemsPartial) => {
         </Button>
       </ButtonGroup>
       <Stack flex={"1 0 150px"}>
-        <Button maxW="250px" onClick={() => handleSendToCart("add")}>
+        <Button maxW="250px" onClick={addProductHandler}>
           Add to cart
         </Button>{" "}
-        <Button maxW="250px" onClick={() => handleSendToCart("remove")}>
+        <Button maxW="250px" onClick={removeProductHandler}>
           remove to cart
         </Button>{" "}
       </Stack>
