@@ -46,7 +46,7 @@ const CartModal = (props: Props) => {
       >
         <HStack justifyContent={"space-between"}>
           <Heading color={"black"} fontSize={"18px"} fontWeight={"500"}>
-            Cart {cartState && `( ${cartState.length} )`}
+            Cart {cartState && `( ${cartState.items.length} )`}
           </Heading>
           <Button
             textDecoration={"underline"}
@@ -56,9 +56,14 @@ const CartModal = (props: Props) => {
             Remove All
           </Button>
         </HStack>
-        <Box minH={"100px"}>
+        <Stack minH={"100px"}>
           {cartState.items?.map((cartState: CartItems) => (
-            <HStack my={4} key={cartState.shortName} alignItems={"center"}>
+            <HStack
+              flex={1}
+              my={4}
+              key={cartState.shortName}
+              alignItems={"center"}
+            >
               <HStack flex={1} alignItems={"center"} gap={4} spacing={"0"}>
                 <Image
                   src={cartState.cartImage}
@@ -88,9 +93,9 @@ const CartModal = (props: Props) => {
               <Box flex={1} bg={"red"}></Box>
             </HStack>
           ))}
-        </Box>
+        </Stack>
         <Stack>
-          <HStack justifyContent={"space-between"}>
+          <HStack spacing={0} gap={6} justifyContent={"flex-end"}>
             <Text color="text">TOTAL</Text>
             <Heading color={"#242323"} fontSize={"22px"} fontWeight={"700"}>
               {formatedNumber(cartState.totalPrice)}
