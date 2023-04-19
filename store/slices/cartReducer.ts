@@ -1,7 +1,6 @@
 import { CartItems, State } from "@/types/type";
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState: State = {
   items: [],
   totalProducts: 0,
@@ -16,7 +15,7 @@ const updateCart = (
     price,
     add,
     cartImage,
-  }: CartItems & { quantityItems: number; add: number }
+  }: CartItems & { add: number }
 ) => {
   const existingItem = state.items.find(
     (item: CartItems) => item.shortName === shortName

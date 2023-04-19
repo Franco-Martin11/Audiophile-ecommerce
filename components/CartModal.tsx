@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeProduct } from "@/store";
+import { resetCart } from "@/store";
 import { CartItems } from "@/types/type";
 import Link from "next/link";
 
@@ -19,7 +19,7 @@ type Props = {};
 const CartModal = (props: Props) => {
   const cartState = useSelector((store: any) => store.cart);
   const dispatcher = useDispatch();
-  const handleReset = () => dispatcher(removeProduct([]));
+  const handleReset = () => dispatcher(resetCart());
 
   return (
     <Box
@@ -56,33 +56,44 @@ const CartModal = (props: Props) => {
             Remove All
           </Button>
         </HStack>
-        {cartState.items?.map((cartState: CartItems) => (
-          <HStack my={4} key={cartState.shortName} alignItems={"center"}>
-            <HStack flex={1} alignItems={"center"} gap={4} spacing={"0"}>
-              <Image
-                src={cartState.cartImage}
-                alt={cartState.shortName}
-                boxSize={"68px"}
-                borderRadius={"lg"}
-                boxShadow={"lg"}
-              />
-              <Stack flex={1} spacing={"0"}>
-                <Heading color={"black"} fontSize={"16px"} fontWeight={"700"}>
-                  {cartState.shortName}
-                </Heading>
-                <Heading color={"text"} fontSize={"18px"} fontWeight={"500"}>
-                  {formatedNumber(cartState.price)}
-                </Heading>
-              </Stack>{" "}
+        <Box minH={"100px"}>
+          {cartState.items?.map((cartState: CartItems) => (
+            <HStack my={4} key={cartState.shortName} alignItems={"center"}>
+              <HStack flex={1} alignItems={"center"} gap={4} spacing={"0"}>
+                <Image
+                  src={cartState.cartImage}
+                  alt={cartState.shortName}
+                  boxSize={"68px"}
+                  borderRadius={"lg"}
+                  boxShadow={"lg"}
+                />
+                <Stack flex={1} spacing={"0"}>
+                  <Heading color={"black"} fontSize={"22px"} fontWeight={"700"}>
+                    {cartState.shortName}
+                  </Heading>
+                  <HStack alignItems={"center"} spacing="0" gap={4}>
+                    <Heading
+                      fontSize={"18px"}
+                      color={"text"}
+                      fontWeight={"500"}
+                    >
+                      {formatedNumber(cartState.price)}
+                    </Heading>
+                    <Text fontSize={"18px"} color="accent">
+                      x{cartState.quantityItems}
+                    </Text>
+                  </HStack>
+                </Stack>{" "}
+              </HStack>
+              <Box flex={1} bg={"red"}></Box>
             </HStack>
-            <Box flex={1} bg={"red"}></Box>
-          </HStack>
-        ))}
+          ))}
+        </Box>
         <Stack>
           <HStack justifyContent={"space-between"}>
             <Text color="text">TOTAL</Text>
             <Heading color={"#242323"} fontSize={"22px"} fontWeight={"700"}>
-              {formatedNumber(155000)}
+              {formatedNumber(cartState.totalPrice)}
             </Heading>
           </HStack>
           <Link href={"/checkout"} passHref>

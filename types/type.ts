@@ -42,6 +42,7 @@ export interface CartItems {
   price: number;
   shortName: string;
   cartImage: string;
+  quantityItems: number;
 }
 
 export interface Field {
