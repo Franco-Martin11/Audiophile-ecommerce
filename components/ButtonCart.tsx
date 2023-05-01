@@ -1,3 +1,4 @@
+'use client'
 import { addProduct, removeProduct } from "@/store";
 import { CartItems, Optional } from "@/types/type";
 import { ButtonGroup, Button, Text, HStack, Stack } from "@chakra-ui/react";
