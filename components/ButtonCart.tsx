@@ -1,5 +1,6 @@
-'use client'
+"use client";
 import { addProduct, removeProduct } from "@/store";
+import { useAppDispatch } from "@/store/hookStore";
 import { CartItems, Optional } from "@/types/type";
 import { ButtonGroup, Button, Text, HStack, Stack } from "@chakra-ui/react";
 import React, { useState } from "react";
@@ -9,7 +10,7 @@ type CartItemsPartial = Optional<CartItems, "quantityItems">;
 
 const ButtonCart = ({ price, shortName, cartImage }: CartItemsPartial) => {
   const [quantityItems, setQuantityItems] = useState(1);
-  const dispatcher = useDispatch();
+  const dispatcher = useAppDispatch();
 
   const handleItems = (type: string) => {
     if (type === "add") {

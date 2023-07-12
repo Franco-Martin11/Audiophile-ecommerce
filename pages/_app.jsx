@@ -1,12 +1,13 @@
-'use client'
+"use client";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Provider } from "react-redux";
 import theme from "../styles/theme";
-import { store } from "../store";
 import { Footer, AboutUs } from "../components";
+import StoreProvider from "../store/storeProvider";
 function App({ Component, pageProps }) {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
+    <StoreProvider>
+      {" "}
       <ChakraProvider theme={theme} resetCSS>
         <>
           <Component {...pageProps} />
@@ -14,7 +15,7 @@ function App({ Component, pageProps }) {
           <Footer />
         </>
       </ChakraProvider>
-    </Provider>
+    </StoreProvider>
   );
 }
 

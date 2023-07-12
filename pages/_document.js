@@ -2,7 +2,7 @@
 import { ColorModeScript } from "@chakra-ui/react";
 import { Html, Head, Main, NextScript } from "next/document";
 import theme from "../styles/theme";
-
+import StoreProvider from "../store/storeProvider";
 export default function Document() {
   return (
     <Html lang="en">

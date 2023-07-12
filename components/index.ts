@@ -4,8 +4,14 @@ export { default as ProductRecomended } from './AlsoLike/components/ProductRecom
 export { default as Banner } from './Banner/Banner';
 export { default as HeadingBanner } from './Banner/HeadingBanner';
 export { default as ButtonCart } from './ButtonCart';
+export { default as ButtonCartModal } from './ButtonCartModal';
+export { default as CartModal } from './CartModal';
 export { default as CategoryContainer } from './Category/CategoryContainer';
 export { default as CardCategory } from './Category/components/CardCategory';
+export { default as FormCategory } from './CheckoutRefactor/components/FormCategory';
+export { default as FormField } from './CheckoutRefactor/components/FormField';
+export { default as PaymentDetails } from './CheckoutRefactor/components/PaymentDetails';
+export { default as CheckoutRefactor } from './CheckoutRefactor';
 export { default as Footer } from './Footer/Footer';
 export { default as GoBack } from './GoBack';
 export { default as Hero } from './Hero/Hero';

@@ -1,3 +1,4 @@
+"use client";
 import { formatedNumber } from "@/utils";
 import {
   Box,
@@ -13,12 +14,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { resetCart } from "@/store";
 import { CartItems } from "@/types/type";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "@/store/hookStore";
 
 type Props = {};
 
 const CartModal = (props: Props) => {
-  const cartState = useSelector((store: any) => store.cart);
-  const dispatcher = useDispatch();
+  const cartState = useAppSelector((store: any) => store.cart);
+  const dispatcher = useAppDispatch();
   const handleReset = () => dispatcher(resetCart());
 
   return (
