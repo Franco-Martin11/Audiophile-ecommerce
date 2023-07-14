@@ -1,21 +1,25 @@
+import { useState } from "react";
+import { Box } from "@chakra-ui/react";
 import CartModal from "@/components/CartModal";
-import { Box, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
 
-type Props = {};
+const Cart = () => {
+  const [open, setOpen] = useState(false);
 
-const Cart = (props: Props) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const handleClick = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
   return (
     <>
       <Box
         p={4}
-        cursor={"pointer"}
+        cursor="pointer"
         as="button"
-        margin={'0 !important'}
-        flex={"0 0 50px"}
-        onClick={() => setOpen((prev) => !prev)}
-        name='CartButton'
+        title="Cart Button"
+        margin="0 !important"
+        flex="0 0 50px"
+        onClick={handleClick}
+        name="CartButton"
       >
         <svg width="23" height="20" xmlns="http://www.w3.org/2000/svg">
           <path

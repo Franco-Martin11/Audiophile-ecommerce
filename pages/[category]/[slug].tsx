@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components";
-import IndividualCardProduct from "@/components/IndividualCardProduct";
 import { Product } from "@/types/type";
 import FilteredData from "@/utils/FilteredData";
+import dynamic from "next/dynamic";
 
 interface ResponseItem {
   res: Product[];
@@ -16,6 +16,9 @@ export async function getServerSideProps(context: {
 }
 
 const Items = ({ res }: ResponseItem) => {
+  const IndividualCardProduct = dynamic(
+    () => import("../../components/IndividualCardProduct")
+  );
   const [{ name }] = res;
   return (
     <PageLayout title={name} bgColor="white">

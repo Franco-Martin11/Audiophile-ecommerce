@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Stack,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -19,15 +20,21 @@ const EarphonesProduct = () => {
       spacing={"0"}
       flexWrap={"wrap"}
       bg={"gray"}
-      borderRadius={'lg'}
+      borderRadius={"lg"}
       _hover={{ boxShadow: "lg" }}
     >
       <Box minW={"250px"}>
-        <ImageComponent
+        {/* <ImageComponent
           bgMobile={"/images/home/mobile/image-earphones-yx1.jpg"}
           bgTablet={"/images/home/tablet/image-earphones-yx1.jpg"}
           bgDesktop={"/images/home/desktop/image-earphones-yx1.jpg"}
           alt={"earphones-yx1"}
+        /> */}
+        <Image
+          src={"/images/home/desktop/image-earphones-yx1.jpg"}
+          alt={"earphones-yx1"}
+          width={450}
+          height={265}
         />
       </Box>
       <Stack
