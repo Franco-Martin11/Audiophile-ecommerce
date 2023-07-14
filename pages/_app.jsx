@@ -1,12 +1,9 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../styles/theme";
 import { Footer, AboutUs } from "../components";
-import StoreProvider from "../store/storeProvider";
 function App({ Component, pageProps }) {
   return (
-    // <Provider store={store}>
-    <StoreProvider>
-      {" "}
+    <>
       <ChakraProvider theme={theme} resetCSS>
         <>
           <Component {...pageProps} />
@@ -14,7 +11,7 @@ function App({ Component, pageProps }) {
           <Footer />
         </>
       </ChakraProvider>
-    </StoreProvider>
+    </>
   );
 }
 

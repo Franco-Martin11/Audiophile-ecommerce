@@ -59,6 +59,7 @@ export interface FormField {
 }
 
 export interface State {
+  updateCart(arg0: any): unknown;
   items: CartItems[] | any;
   totalProducts: number;
   totalPrice: number;

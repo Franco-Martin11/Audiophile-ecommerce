@@ -1,17 +1,13 @@
-"use client";
-import { addProduct, removeProduct } from "@/store";
-import { useAppDispatch } from "@/store/hookStore";
+import cartReducer from "@/store/useCartStore";
 import { CartItems, Optional } from "@/types/type";
 import { ButtonGroup, Button, Text, HStack, Stack } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 
 type CartItemsPartial = Optional<CartItems, "quantityItems">;
 
 const ButtonCart = ({ price, shortName, cartImage }: CartItemsPartial) => {
   const [quantityItems, setQuantityItems] = useState(1);
-  const dispatcher = useAppDispatch();
-
+  const { addProduct, removeProduct } = cartReducer;
   const handleItems = (type: string) => {
     if (type === "add") {
       setQuantityItems((prev) => prev + 1);
@@ -23,10 +19,10 @@ const ButtonCart = ({ price, shortName, cartImage }: CartItemsPartial) => {
     }
   };
   const addProductHandler = () =>
-    dispatcher(addProduct({ price, quantityItems, shortName, cartImage }));
+    addProduct({ price, quantityItems, shortName, cartImage });
 
   const removeProductHandler = () =>
-    dispatcher(removeProduct({ shortName, quantityItems, price }));
+    removeProduct({ shortName, quantityItems, price });
 
   return (
     <HStack spacing={4}>

@@ -10,18 +10,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { resetCart } from "@/store";
 import { CartItems } from "@/types/type";
 import Link from "next/link";
-import { useAppDispatch, useAppSelector } from "@/store/hookStore";
+import cartReducer, { useCartStore } from "@/store/useCartStore";
 
 type Props = {};
 
-const CartModal = (props: Props) => {
-  const cartState = useAppSelector((store: any) => store.cart);
-  const dispatcher = useAppDispatch();
-  const handleReset = () => dispatcher(resetCart());
+const CartModal = () => {
+  const cartState = useCartStore((state) => state);
+  const { resetCart } = cartReducer;
+  const handleReset = () => resetCart();
 
   return (
     <Box
