@@ -1,4 +1,4 @@
-import { Hero, PageLayout, ShopCardContainer } from "@/components";
+import {  PageLayout, ShopCardContainer } from "@/components";
 import SeeProductContainer from "@/components/SeeProduct/SeeProductContainer";
 import { Stack } from "@chakra-ui/react";
 
