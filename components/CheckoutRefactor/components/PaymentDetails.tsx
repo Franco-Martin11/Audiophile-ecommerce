@@ -1,27 +1,39 @@
 import { Field } from "@/types/type";
-import { RadioGroup, Radio, Heading, Input } from "@chakra-ui/react";
+import {
+  RadioGroup,
+  Radio,
+  Heading,
+  Input,
+  HStack,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
-
-type Props = {};
-
 const PaymentDetails = ({ field, formik }: { field: Field[]; formik: any }) => (
   <>
     <RadioGroup
-      display={"flex"}
-      gap={4}
-      colorScheme="orange"
       onChange={(value) => formik.setFieldValue("paymentMethod", value)}
     >
-      {field.map((field) => (
-        <Radio
-          key={field.name}
-          color={"white"}
-          name={field.name}
-          value={field.value}
-        >
-          {field.label}
-        </Radio>
-      ))}
+      <HStack gap={4}>
+        {field.map((field, index) => (
+          <Radio
+            defaultChecked
+            key={field.name}
+            name={field.name}
+            value={field.value}
+            size="lg"
+            colorScheme="orange"
+            border="1px solid orange"
+          >
+            <Text
+              as={"span"}
+              borderBottom={"1px solid transparent"}
+              _hover={{ borderBottom: "1px solid orange" }}
+            >
+              {field.label}
+            </Text>
+          </Radio>
+        ))}
+      </HStack>
     </RadioGroup>
     {formik?.values?.paymentMethod === "e-Money" && (
       <>

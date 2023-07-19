@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box } from "@chakra-ui/react";
-import CartModal from "@/components/CartModal";
+import { CartModal } from "@/components/Cart/components";
 
 const Cart = () => {
   const [open, setOpen] = useState(false);

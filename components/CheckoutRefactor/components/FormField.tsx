@@ -1,4 +1,4 @@
-import { Field, FormField } from "@/types/type";
+import { Field } from "@/types/type";
 import { Box, FormLabel, Input } from "@chakra-ui/react";
 import React from "react";
 
