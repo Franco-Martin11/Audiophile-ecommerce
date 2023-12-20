@@ -1,8 +1,9 @@
 import { NextPage } from "next";
-import { Heading, Stack } from "@chakra-ui/react";
-import { PageLayout, HeadingBanner, ProductCard } from "@/components";
+import { chakra } from "@chakra-ui/react";
+import { PageLayout, HeadingBanner, ProductCard, GoBack } from "@/components";
 import { Product } from "@/types/type";
 import FilteredData from "@/utils/FilteredData";
+import ErrorPageLayout from "@/components/Layout/ErrorPageLayout";
 
 interface Props {
   res: Product[];
@@ -10,18 +11,12 @@ interface Props {
 }
 
 const Index: NextPage<Props> = ({ res, category }) => {
-  if (res.length === 0) {
-    return (
-      <PageLayout title={category}>
-        <Heading>Funcion</Heading>
-      </PageLayout>
-    );
-  }
-
+  if (res.length === 0)
+    return <ErrorPageLayout description={"category"} category={category} />;
   return (
     <PageLayout title={category} bgColor="bg">
       <HeadingBanner categoryTitle={category} />
-      <Stack gap={8} bg="bg" p={8}>
+      <chakra.div display={"flex"} flexDir={"column"} gap={8} bg="bg" p={8}>
         {res.map((element: Product) => (
           <ProductCard
             key={element.id}
@@ -33,7 +28,7 @@ const Index: NextPage<Props> = ({ res, category }) => {
             slug={element.slug}
           />
         ))}
-      </Stack>
+      </chakra.div>
     </PageLayout>
   );
 };

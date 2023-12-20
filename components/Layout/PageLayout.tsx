@@ -18,7 +18,7 @@ const PageLayout = ({
         <meta name="description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <chakra.main position={'relative'}>
+      <chakra.main position={"relative"}>
         <Container maxW={"container.xl"} mx="auto" p="0">
           <Navbar />
           <Divider my={1} />
