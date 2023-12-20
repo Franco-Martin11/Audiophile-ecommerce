@@ -19,7 +19,7 @@ const AboutUs = (props: Props) => {
       <SimpleGrid
         py={10}
         px={4}
-        bgColor="white"
+        backgroundColor="white"
         justifyItems={"center"}
         alignItems={"center"}
         columns={{ base: 1, lg: 2 }}

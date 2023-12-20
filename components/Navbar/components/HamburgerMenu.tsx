@@ -2,9 +2,8 @@ import { Button } from "@chakra-ui/react";
 import Image from "next/image";
 import React, { useState } from "react";
 
-type Props = {};
 
-const HamburgerMenu = (props: Props) => {
+const HamburgerMenu = () => {
   const [state, setState] = useState(true);
   const handleClick = () => setState((prev) => !prev);
   return (
