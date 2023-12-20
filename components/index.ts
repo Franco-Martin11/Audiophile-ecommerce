@@ -18,6 +18,7 @@ export { default as Hero } from './Hero/Hero';
 export { default as ImageComponent } from './ImageComponent';
 export { default as IncludedItems } from './IncludedItems';
 export { default as IndividualCardProduct } from './IndividualCardProduct';
+export { default as ErrorPageLayout } from './Layout/ErrorPageLayout';
 export { default as PageLayout } from './Layout/PageLayout';
 export { default as Navbar } from './Navbar/Navbar';
 export * from './Navbar/components';
