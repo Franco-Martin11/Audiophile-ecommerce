@@ -44,18 +44,13 @@ function AlertDialogExample() {
         isOpen={isOpen}
         leastDestructiveRef={cancelRef}
         onClose={onClose}
+        size={'2xl'}
       >
         <AlertDialogOverlay>
-          <AlertDialogContent>
+          <AlertDialogContent boxShadow={'none'}>
             <AlertDialogBody>
               <CartModal />
             </AlertDialogBody>
-{/* 
-            <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose}>
-                Cancel
-              </Button>
-            </AlertDialogFooter> */}
           </AlertDialogContent>
         </AlertDialogOverlay>
       </AlertDialog>

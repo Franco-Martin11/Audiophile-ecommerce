@@ -21,7 +21,7 @@ const PageLayout = ({
       <chakra.main position={"relative"}>
         <Container maxW={"container.xl"} mx="auto" p="0">
           <Navbar />
-          <Divider my={1} />
+          {/* <Divider my={1} /> */}
           {title === "home" && <Hero />}
         </Container>
         <Box mt={"80px"} bg={bgColor}>

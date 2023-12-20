@@ -1,10 +1,8 @@
-import ImageComponent from "@/components/ImageComponent";
 import {
   Box,
   Button,
   HStack,
   Heading,
-  SimpleGrid,
   Stack,
 } from "@chakra-ui/react";
 import Image from "next/image";
@@ -24,12 +22,6 @@ const EarphonesProduct = () => {
       _hover={{ boxShadow: "lg" }}
     >
       <Box minW={"250px"}>
-        {/* <ImageComponent
-          bgMobile={"/images/home/mobile/image-earphones-yx1.jpg"}
-          bgTablet={"/images/home/tablet/image-earphones-yx1.jpg"}
-          bgDesktop={"/images/home/desktop/image-earphones-yx1.jpg"}
-          alt={"earphones-yx1"}
-        /> */}
         <Image
           src={"/images/home/desktop/image-earphones-yx1.jpg"}
           alt={"earphones-yx1"}
