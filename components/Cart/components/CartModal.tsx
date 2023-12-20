@@ -12,30 +12,19 @@ const CartModal = () => {
     const handleReset = () => resetCart();
   
     return (
-      <Box
-        position={"absolute"}
-        zIndex={"overlay"}
-        w={"full"}
-        h={"25vh"}
-        bg={"blackAlpha.600"}
-        top={0}
-        left={0}
-        right={0}
-        bottom={0}
-        margin={"0 !important"}
-        pt={20}
-      >
+      <>
         <Box
           zIndex={"popover"}
           top={"16"}
           bg={"bg"}
-          w={"90%"}
           borderRadius={"lg"}
           mx={"auto"}
           p={6}
+          w={"full"}
+          maxW={'45rem'}
         >
           <HStack justifyContent={"space-between"}>
-            <Heading color={"black"} fontSize={"18px"} fontWeight={"500"}>
+            <Heading textColor={"black"} fontSize={"18px"} fontWeight={"500"}>
               Cart {cartState && `( ${cartState.items.length} )`}
             </Heading>
             <Button
@@ -69,9 +58,12 @@ const CartModal = () => {
             </Link>
           </Stack>
         </Box>
-      </Box>
+      </>
     );
   };
   
 
 export default CartModal
+
+
+

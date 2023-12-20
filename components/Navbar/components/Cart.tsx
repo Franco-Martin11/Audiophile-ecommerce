@@ -1,25 +1,56 @@
 import { useState } from "react";
-import { Box } from "@chakra-ui/react";
+import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogOverlay,
+  Box,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { CartModal } from "@/components/Cart/components";
+import React from "react";
 
 const Cart = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
+  // const handleClick = () => {
+  //   setOpen((prevOpen) => !prevOpen);
+  // };
+
+  return (
+    <AlertDialogExample />
+    // <>
+    //   <Box
+    //     p={4}
+    //     cursor="pointer"
+    //     as="button"
+    //     onClick={handleClick}
+    //     margin="0 !important"
+    //     flex="0 0 50px"
+    //     title="Cart Button"
+    //     name="CartButton"
+    //   ></Box>
+    //   {open && <CartModal />}
+    // </>
+  );
+};
+
+export default Cart;
+
+function AlertDialogExample() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
 
   return (
     <>
-      <Box
-        p={4}
-        cursor="pointer"
-        as="button"
+      <Button
         title="Cart Button"
-        margin="0 !important"
-        flex="0 0 50px"
-        onClick={handleClick}
         name="CartButton"
+        colorScheme="red"
+        onClick={onOpen}
       >
         <svg width="23" height="20" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -28,10 +59,27 @@ const Cart = () => {
             fillRule="nonzero"
           />
         </svg>
-      </Box>
-      {open && <CartModal />}
+      </Button>
+
+      <AlertDialog
+        isOpen={isOpen}
+        leastDestructiveRef={cancelRef}
+        onClose={onClose}
+      >
+        <AlertDialogOverlay>
+          <AlertDialogContent>
+            <AlertDialogBody>
+              <CartModal />
+            </AlertDialogBody>
+{/* 
+            <AlertDialogFooter>
+              <Button ref={cancelRef} onClick={onClose}>
+                Cancel
+              </Button>
+            </AlertDialogFooter> */}
+          </AlertDialogContent>
+        </AlertDialogOverlay>
+      </AlertDialog>
     </>
   );
-};
-
-export default Cart;
+}
